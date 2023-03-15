@@ -1,0 +1,5 @@
+#CC=afl-clang-lto CXX=afl-clang-lto++ RANLIB=llvm-ranlib AR=llvm-ar CFLAGS="-std=c99 -g -ggdb -fsanitize=address,undefined -fno-sanitize-recover=all -O3" CXXFLAGS="-std=c99 -g -ggdb -O3 -fsanitize=address,undefined -fno-sanitize-recover=all" LDFLAGS="-std=c99 -fsanitize=address,undefined -fno-sanitize-recover=all -lm -fuse-ld=/home/cyberhacker/Asioita/newaflfuzz/shit/llvm-project-llvmorg-15.0.7/build/bin/ld.lld" ./configure --prefix='/home/cyberhacker/httpd-lto/install' --with-included-apr --enable-static-support --enable-mods-static=few --disable-shared --disable-pie --enable-debugger-mode --with-mpm=prefork  --enable-negotiation=static --enable-session=static --enable-auth-form=static --enable-request=static --enable-rewrite=static --enable-auth_digest=static --enable-deflate=static  --enable-crypto=static --with-crypto --with-openssl --enable-proxy_html=static --enable-xml2enc=static --enable-cache=static --enable-cache-disk=static --enable-data=static --enable-substitute=static --enable-ratelimit=static --enable-dav=static --enable-json=static
+
+
+clang -g -O3 -fsanitize=fuzzer,address,undefined main.c 
+
